@@ -1,0 +1,58 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "s3:AbortMultipartUpload",
+                "s3:GetBucketLocation",
+                "s3:GetObject",
+                "s3:ListBucket",
+                "s3:ListBucketMultipartUploads",
+                "s3:PutObject",
+                "s3:Get*",
+                "s3:List*",
+                "s3:PutObject"
+            ],
+            "Resource": [
+                "arn:aws:s3:::name_of_s3bucket",
+                "arn:aws:s3:::name_of_s3bucket/*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "firehose:DeleteDeliveryStream",
+                "firehose:PutRecord",
+                "firehose:PutRecordBatch",
+                "firehose:UpdateDestination"
+            ],
+            "Resource": "arn:aws:firehose:region:account_id:deliverystream/name_of_deliverystream"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "kinesis:DescribeStream",
+                "kinesis:GetShardIterator",
+                "kinesis:GetRecords",
+                "kinesis:ListShards"
+            ],
+            "Resource": "arn:aws:kinesis:region:account_id:stream/name_of_deliverystream"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "logs:PutLogEvents"
+            ],
+            "Resource": [
+                "arn:aws:logs:region:account_id:log-group:/aws/kinesisfirehose/name_of_deliverystream:log-stream:name_of_log_stram"
+            ]
+        },
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": "cloudwatch:PutMetricData",
+            "Resource": "*"
+        }
+    ]
+}
