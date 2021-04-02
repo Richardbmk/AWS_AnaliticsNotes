@@ -35,9 +35,28 @@
                 "kinesis:DescribeStream",
                 "kinesis:GetShardIterator",
                 "kinesis:GetRecords",
-                "kinesis:ListShards"
+                "kinesis:ListShards",
+                "kinesis:PutRecords"
             ],
             "Resource": "arn:aws:kinesis:region:account_id:stream/name_of_deliverystream"
+        },
+        {
+            "Sid": "SpecificTable",
+            "Effect": "Allow",
+            "Action": [
+                "dynamodb:BatchGet*",
+                "dynamodb:DescribeStream",
+                "dynamodb:DescribeTable",
+                "dynamodb:Get*",
+                "dynamodb:Query",
+                "dynamodb:Scan",
+                "dynamodb:BatchWrite*",
+                "dynamodb:CreateTable",
+                "dynamodb:Delete*",
+                "dynamodb:Update*",
+                "dynamodb:PutItem"
+            ],
+            "Resource": "arn:aws:dynamodb:region:account_id:table/Table_name"
         },
         {
             "Effect": "Allow",

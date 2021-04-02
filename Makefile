@@ -25,8 +25,8 @@ delete-kinesis-stream:
 		--stream-name $(STREAM_NAME) \
 		--region $(AWS_REGION)
 
-stop-ec2-instance:
+stop-ec2-instances:
 	aws ec2 stop-instances --instance-ids $(INSTACE_IDS)
 
-start-ec2-instance:
-	aws ec2 stop-instances --instance-ids $(INSTACE_IDS)
+start-ec2-instances:
+	aws ec2 start-instances --instance-ids $(INSTACE_IDS)

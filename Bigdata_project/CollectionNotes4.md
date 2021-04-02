@@ -17,6 +17,8 @@ If you wanna ssh into your cluster you will need to enable in the Security Group
 
 Find Master public DNS an ssh into your Master node!
 
+- $ ssh -i "oregonKeypair.pem" hadoop@ec2-44-242-159-56.us-west-2.compute.amazonaws.com
+
 3. Using EMR Recomendacion samples 
 We are in m5.xlarge:
 
