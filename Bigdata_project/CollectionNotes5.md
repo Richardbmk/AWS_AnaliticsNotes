@@ -1,6 +1,7 @@
 # Section 5: Domain 4: Analysis
 
 ## 84. [Exercise] Kinesis Analytics, Part 1
+
 ### TRANSACTION RATE ALARMS
 
 1. Create another Kinesis Data Stream
@@ -28,17 +29,17 @@
 **Connect to a destinaiton:**
 
 - Kinesis Stream: OrderRateAlarms
-- In-application stream name*: TRIGGER_COUNT_STREAM
+- In-application stream name\*: TRIGGER_COUNT_STREAM
 - Everything else by default
 
 3. Setup the lambda function
 
 - create a Role for the lambda function
 - Select create Role in the IAM and then choose lambda service
-- Attach *AWSLambadaKinesisExecutionRole* policy to the lambda Role
-- Attach *AmazonSNSFullAccess* policy to the lambda Role
-- Attach *CloudWatchLogFullAccess* policy to the lambda Role
-- Attach *AWSLambdaBasicExecutionRole* policy to the lambda Role
+- Attach _AWSLambadaKinesisExecutionRole_ policy to the lambda Role
+- Attach _AmazonSNSFullAccess_ policy to the lambda Role
+- Attach _CloudWatchLogFullAccess_ policy to the lambda Role
+- Attach _AWSLambdaBasicExecutionRole_ policy to the lambda Role
 - Create the role
 
 - Create the lamda
@@ -54,12 +55,12 @@
 - Topic Name: CadabraAlarms
 - Display name: Cadabra
 - create a subscription for the topic
-    - Protocol: SMS
-    - Endpoint: your phone nomber
+  - Protocol: SMS
+  - Endpoint: your phone nomber
 - Publish a message:
-    - Subject: Test
-    - Message format: Raw
-    - Message: whatever you like
+  - Subject: Test
+  - Message format: Raw
+  - Message: whatever you like
 - copy the Topic ARN
 
 5. Update lambda Function
@@ -67,7 +68,3 @@
 - Paste the SNS Topic ARN
 
 6. Make a test and clean everything
-
-
-
-
